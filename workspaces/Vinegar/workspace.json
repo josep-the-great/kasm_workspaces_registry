@@ -1,28 +1,19 @@
 {
   "name": "Ubuntu Vinegar Studio",
-  "description": "Ubuntu Workspace with Flatpak and Vinegar (Roblox Studio runner)",
-  "image": "kasmweb/ubuntu-jammy-desktop:1.14.0",
-  "categories": [
-    "Development",
-    "Desktop"
-  ],
   "friendly_name": "Ubuntu + Vinegar Studio",
-  "architecture": [
-    "amd64"
-  ],
+  "description": "Ubuntu with Flatpak and Vinegar",
+  "image": "kasmweb/ubuntu-jammy-desktop:1.14.0",
   "cores": 8,
   "memory": 8192,
   "disk": 16386,
-  "docker_registry": "https://index.docker.io/v1/",
-  "run_config": {
-    "hostname": "kasm"
-  },
+  "categories": ["Desktop"],
+  "architecture": ["amd64"],
   "exec_config": {
     "first_launch": {
       "cmd": [
         "/bin/bash",
         "-c",
-        "sudo apt update && sudo apt install -y flatpak && flatpak install -y flathub org.vinegarhq.Vinegar"
+        "sudo apt update && sudo apt install -y flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install -y flathub org.vinegarhq.Vinegar"
       ]
     }
   },
