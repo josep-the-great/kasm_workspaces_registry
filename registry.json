@@ -1,0 +1,11 @@
+{
+  "name": "Joseph Registry",
+  "description": "Custom Kasm Workspaces",
+  "image_registry": "https://index.docker.io/v1/",
+  "workspaces": [
+    {
+      "name": "Ubuntu Vinegar Studio",
+      "file": "workspaces/ubuntu-vinegar.json"
+    }
+  ]
+}
