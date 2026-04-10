@@ -10,6 +10,8 @@
   "memory": 8192,
   "disk": 16386,
 
+  "uncompressed_size_mb": 3000
+
   "categories": ["Desktop"],
   "architecture": ["amd64"],
 
