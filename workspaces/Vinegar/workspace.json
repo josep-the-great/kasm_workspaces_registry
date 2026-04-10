@@ -1,33 +1,36 @@
 {
-  "description": "Customized Ubuntu 22.04 (Jammy) desktop with extras",
-  "docker_registry": "https://index.docker.io/v1/",
-  "image_src": "ubuntu-jammy.png",
-  "name": "doctorwhen/kasm:ubuntu-jammy",
-  "friendly_name": "Ubuntu 22.04",
-  "cores": 8,
-  "memory": 8192,
-  "gpu_count": 0,
-  "cpu_allocation_method": "Inherit",
-  "run_config": { "hostname": "kasm-jammy" },
-  "exec_config": {
-     "first_launch": {
-       "user":"root",
-       "cmd":"bash -c 'echo \"kasm-user  ALL=(ALL) NOPASSWD: ALL\" >> /etc/sudoers'",
-       "cmd":"sudo apt install flatpak",
-       "cmd":"flatpak install -y flathub org.vinegarhq.Vinegar",
-       "cmd":"flatpak run org.vinegarhq.Vinegar studio"
-     }
-  },
+  "name": "Ubuntu Vinegar Studio",
+  "description": "Ubuntu Workspace with Flatpak and Vinegar (Roblox Studio runner)",
+  "image": "kasmweb/ubuntu-jammy-desktop:1.14.0",
   "categories": [
-    "Desktop",
-    "Productivity"
+    "Development",
+    "Desktop"
   ],
+  "friendly_name": "Ubuntu + Vinegar Studio",
   "architecture": [
     "amd64"
   ],
-  "compatibility": [
-    "1.18.x",
-    "1.17.x"
-  ],
-  "uncompressed_size_mb": 10600
+  "cores": 8,
+  "memory": 8192,
+  "disk": 16386,
+  "docker_registry": "https://index.docker.io/v1/",
+  "run_config": {
+    "hostname": "kasm"
+  },
+  "exec_config": {
+    "first_launch": {
+      "cmd": [
+        "/bin/bash",
+        "-c",
+        "sudo apt update && sudo apt install -y flatpak && flatpak install -y flathub org.vinegarhq.Vinegar"
+      ]
+    }
+  },
+  "launch_config": {
+    "cmd": [
+      "/bin/bash",
+      "-c",
+      "flatpak run org.vinegarhq.Vinegar studio"
+    ]
+  }
 }
