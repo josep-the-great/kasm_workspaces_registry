@@ -1,26 +1,30 @@
 {
-  "name": "Ubuntu Vinegar Studio",
-  "friendly_name": "Ubuntu + Vinegar Studio",
-  "description": "Ubuntu with Flatpak and Vinegar",
-  "image": "kasmweb/ubuntu-jammy-desktop:1.14.0",
+  "name": "Ubuntu KDE Vinegar Studio",
+  "friendly_name": "Ubuntu KDE + Vinegar Studio",
+  "description": "Ubuntu with the KDE desktop environment.",
 
-  "kasm_version": ">=1.18.0",
+  "image": "lscr.io/linuxserver/webtop:ubuntu-kde",
+  "docker_registry": "https://ghcr.io/",
+
+  "image_src": "ubuntu-kde.png",
+
+  "kasm_version": ">=1.18.0 <2.0.0",
 
   "cores": 8,
   "memory": 8192,
   "disk": 16386,
 
-  "uncompressed_size_mb": 3000
+  "uncompressed_size_mb": 4000,
 
-  "categories": ["Desktop"],
   "architecture": ["amd64"],
+  "categories": ["All"],
 
   "exec_config": {
     "first_launch": {
       "cmd": [
         "/bin/bash",
         "-c",
-        "sudo apt update && sudo apt install -y flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install -y flathub org.vinegarhq.Vinegar"
+        "apt update && apt install -y flatpak && flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo && flatpak install -y flathub org.vinegarhq.Vinegar"
       ]
     }
   },
