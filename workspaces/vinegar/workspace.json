@@ -2,11 +2,10 @@
   "name": "Ubuntu KDE Vinegar Studio",
   "friendly_name": "Ubuntu KDE + Vinegar Studio",
   "description": "Ubuntu with the KDE desktop environment.",
+  "type": "container",
+  "image": "kasmweb/ubuntu-jammy-desktop:1.15.0"
 
-  "image": "lscr.io/linuxserver/webtop:ubuntu-kde",
-  "docker_registry": "https://ghcr.io/",
-
-  "image_src": "ubuntu-kde.png",
+  "image_src": "ubuntu.png",
 
   "kasm_version": ">=1.18.0 <2.0.0",
 
