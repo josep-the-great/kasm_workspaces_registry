@@ -3,11 +3,16 @@
   "friendly_name": "Ubuntu + Vinegar Studio",
   "description": "Ubuntu with Flatpak and Vinegar",
   "image": "kasmweb/ubuntu-jammy-desktop:1.14.0",
-  "cores": 8,
-  "memory": 8192,
-  "disk": 16386,
+
+  "kasm_version": ">=1.18.0",
+
+  "cores": 2,
+  "memory": 4096,
+  "disk": 8192,
+
   "categories": ["Desktop"],
   "architecture": ["amd64"],
+
   "exec_config": {
     "first_launch": {
       "cmd": [
@@ -17,6 +22,7 @@
       ]
     }
   },
+
   "launch_config": {
     "cmd": [
       "/bin/bash",
